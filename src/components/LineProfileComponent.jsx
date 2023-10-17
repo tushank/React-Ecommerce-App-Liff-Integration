@@ -33,6 +33,7 @@ function LineProfileComponent() {
         try {
           const userProfile = await liff.getProfile();
           setProfile(userProfile);
+          alert(JSON.stringify(userProfile));
         } catch (error) {
           console.error("Failed to fetch user profile:", error);
         }
