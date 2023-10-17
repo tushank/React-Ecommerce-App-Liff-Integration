@@ -61,10 +61,42 @@ function LineProfileComponent() {
   return (
     <div>
       {profile ? (
-        <div>
-          <img src={profile.pictureUrl} alt={profile.displayName} />
-          <p>{profile.displayName}</p>
-          <p>{profile.statusMessage}</p>
+        <div className="container mt-5">
+          <div className="row d-flex justify-content-center">
+            <div className="col-md-7">
+              <div className="card p-3 py-4">
+                <div className="text-center">
+                  <div>
+                    <img
+                      src="/assets/images/icons/icons8-line.svg"
+                      alt="Line Logo"
+                    />
+                  </div>
+                  <img
+                    src={
+                      profile?.pictureUrl
+                        ? profile?.pictureUrl
+                        : "https://img.icons8.com/material-sharp/200/user.png"
+                    }
+                    width="200"
+                    alt={profile?.displayName}
+                    className="rounded-circle"
+                  />
+                </div>
+
+                <div className="text-center mt-3">
+                  <h5 className="mt-2 mb-0">{profile?.displayName}</h5>
+                  <span>
+                    {profile?.statusMessage
+                      ? profile?.statusMessage
+                      : `hey, what's up`}
+                  </span>
+
+                  {/*  */}
+                </div>
+              </div>
+            </div>
+          </div>
 
           <input
             type="text"
